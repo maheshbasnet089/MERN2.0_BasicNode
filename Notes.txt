@@ -1,0 +1,31 @@
+
+
+Day 3 
+
+Folder banayim 
+Folder lai vscode ma kholim rw npm init command hanim 
+Tip : npm init -y
+
+npm install express
+ Tip : npm i express 
+
+ Semantic Versioning (semVer)
+
+1.0.0
+1.0.1
+1.0.8
+1.0.9
+1.1.0
+1.1.1
+1.1.2
+1.1.3
+1.1.9
+1.2.0
+1.9.0
+2.0.0
+ major.minor.patch (4.18.2)
+
+
+ localhost:3000
+ 127.0.0.1:3000
+ [::1]:3000
