@@ -29,3 +29,8 @@ npm install express
  localhost:3000
  127.0.0.1:3000
  [::1]:3000
+
+ 18.10
+
+ nodemon 
+ npm i -g nodemon
