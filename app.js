@@ -50,24 +50,18 @@ app.get("/book",async (req,res)=>{
 
 // single read
 app.get("/book/:id",async(req,res)=>{
-  try {
     const id = req.params.id
-    const book = await Book.findById(id) // return object garxa
-    if(!book) {
-     res.status(404).json({
-         message : "Nothing found"
-     })
-    }else{
-     res.status(200).json({
-         message : "Single Book Fetched Successfully",
-         data : book
-     })
-    }
-  } catch (error) {
-    res.status(500).json({
-        message : "Something went wrong"
+   const book = await Book.findById(id) // return object garxa
+   if(!book) {
+    res.status(404).json({
+        message : "Nothing found"
     })
-  }
+   }else{
+    res.status(200).json({
+        message : "Single Book Fetched Successfully",
+        data : book
+    })
+   }
    
     
 })
