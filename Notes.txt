@@ -34,3 +34,7 @@ npm install express
 
  nodemon 
  npm i -g nodemon
+
+ For post request 
+ body>raw>json
+ app.use(express.urlencoded({extended : true}))
