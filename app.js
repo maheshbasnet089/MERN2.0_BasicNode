@@ -52,6 +52,7 @@ app.get("/book",async (req,res)=>{
 app.get("/book/:id",async(req,res)=>{
     const id = req.params.id
    const book = await Book.findById(id) // return object garxa
+   
    if(!book) {
     res.status(404).json({
         message : "Nothing found"
@@ -61,10 +62,35 @@ app.get("/book/:id",async(req,res)=>{
         message : "Single Book Fetched Successfully",
         data : book
     })
-   }
-   
-    
+   }  
 })
+
+//delete operation 
+app.delete("/book/:id",async(req,res)=>{
+    const id = req.params.id
+   await Book.findByIdAndDelete(id)
+   res.status(200).json({
+        message : "Book Deleted Successfully"
+   })
+})
+
+// update operation 
+app.patch("/book/:id",async (req,res)=>{
+    const id = req.params.id // kun book update garney id ho yo
+    const {bookName,bookPrice,authorName,publishedAt,publication,isbnNumber} = req.body
+    await Book.findByIdAndUpdate(id,{
+        bookName : bookName,
+        bookPrice : bookPrice,
+        authorName : authorName,
+        publication : publication,
+        publishedAt : publishedAt,
+        isbnNumber : isbnNumber
+    })
+    res.status(200).json({
+        message : "Book Updated Successfully"
+    })
+})
+
 
 app.listen(3000,()=>{
     console.log("Nodejs server has started at port 3000")
