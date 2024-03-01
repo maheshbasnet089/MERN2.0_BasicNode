@@ -9,6 +9,13 @@ const upload = multer({storage : storage})
  // Alternative 
 //  const app = require('express')()
 
+// cors package 
+const cors = require('cors')
+
+
+app.use(cors({
+    origin : "*"
+}))
 
 app.use(express.json())
 
